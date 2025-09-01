@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-
+# Sample customer data: customer name mapped to a list of their order prices
 customers_data = {
     'Alice': [25, 30, 22],
     'Bob': [15, 18],
@@ -14,18 +14,9 @@ customers_data = {
     'Kevin': [],
     'Leo': [100, 15, 50]
 }
+
 def find_eligible_customers(customers, min_orders, min_price):
-    """
-    Finds customers who have a minimum number of orders, each above a minimum price.
-    
-    Args:
-        customers (dict): A dictionary with customer names as keys and a list of order prices as values.
-        min_orders (int): The minimum number of orders a customer must have.
-        min_price (int): The minimum price for each of those orders.
-        
-    Returns:
-        list: A list of names of eligible customers.
-    """
+  
     eligible_list = []
     for customer, orders in customers.items():
         # Filter orders to find those that meet the minimum price
@@ -38,9 +29,6 @@ def find_eligible_customers(customers, min_orders, min_price):
     return eligible_list
 
 def visualize_sales(customers):
-    """
-    Visualizes total sales and income per customer.
-    """
     customer_names = list(customers.keys())
     total_sales = [sum(orders) for orders in customers.values()]
     
